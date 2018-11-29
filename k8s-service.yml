@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: golang-microservice
+  labels:
+    app: golang-microservice
+    tier: service
+spec:
+  # use NodePort here to be able to access a port on each node
+  type: NodePort
+  ports:
+  - port: 8000
+    nodePort: 30000
+  selector:
+    app: golang-microservice
