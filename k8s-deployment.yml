@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: golang-microservice
-        image: "ducnv/golang-microservice:1.0"
+        image: "ducnv95/golang-microservice:1.0"
         resources:
           requests:
             memory: "64Mi"
