@@ -7,7 +7,7 @@ metadata:
     env: test
 spec:
   containers:
-  - image: ducnv/golang-microservice:1.0.0-alpine
+  - image: ducnv/golang-microservice:1.0
     name: golang-microservice
     ports:
     - containerPort: 8000
