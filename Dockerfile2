@@ -1,0 +1,8 @@
+FROM golang:latest 
+RUN mkdir /app 
+ADD rest-api.go /app/ 
+WORKDIR /app 
+RUN go mod init Golang-Microservice
+RUN go build
+EXPOSE 8000 
+CMD ["/app/Golang-Microservice"]
