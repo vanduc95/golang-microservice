@@ -11,12 +11,17 @@ Output is binary file `Golang-Microservice`
 #### 2. Containerizing Go Microservice on Docker.
 Building docker image with Dockerfile:
 ```
-$ docker build -t ducnv95/golang-microservice:1.0 .
+$ docker build -t ducnv95/golang-rest-api:1.0 .
+$ docker run -it -p 8000:8000 ducnv95/golang-rest-api:1.0
+```
+Verify
+```
+$ curl localhost:8000/people
 ```
 Pushing the docker image on docker-hub:
 ```
 $ docker login
-$ docker push ducnv95/golang-microservice:1.0 
+$ docker push ducnv95/golang-rest-api:1.0
 ```
 #### 3. Deploying & Scaling Go microservice on __Kubernetes__.
 Create pod:
@@ -37,7 +42,7 @@ Verify
 ```
 Roll-up, roll-back a deployment
 ```
-# kubectl set image deployment.extensions/golang-microservice golang-microservice=ducnv95/golang-microservice:2.0 --record=true
+# kubectl set image deployment.extensions/golang-microservice golang-microservice=ducnv95/golang-rest-api:2.0
 # kubectl get pod,deploy,svc,rs -o wide
 # kubectl describe deployment
 # kubectl rollout history deployment.extensions/golang-microservice
