@@ -47,5 +47,9 @@ Scaling a deployment
 ```
 # kubectl scale deployment golang-microservice --replicas=4
 ```
+Delete all
+```
+# kubectl delete all -l app=golang-microservice
+```
 
 ## Happy Learning!
