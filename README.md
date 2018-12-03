@@ -35,5 +35,17 @@ Verify
 ```
 # curl $(minikube service golang-microservice --url)/people
 ```
+Roll-up, roll-back a deployment
+```
+# kubectl set image deployment.extensions/golang-microservice golang-microservice=ducnv95/golang-microservice:2.0 --record=true
+# kubectl get pod,deploy,svc,rs -o wide
+# kubectl describe deployment
+# kubectl rollout history deployment.extensions/golang-microservice
+# kubectl rollout undo deployment.extensions/golang-microservice --to-revision=1
+```
+Scaling a deployment
+```
+# kubectl scale deployment golang-microservice --replicas=4
+```
 
 ## Happy Learning!
